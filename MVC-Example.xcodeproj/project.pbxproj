@@ -24,6 +24,10 @@
 		CE9BE7972BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7962BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift */; };
 		CE9BE79E2BF9994D001BB09F /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE79D2BF9994D001BB09F /* CharacterDetailView.swift */; };
 		CE9BE7A02BF999E9001BB09F /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE79F2BF999E9001BB09F /* CharacterDetailViewController.swift */; };
+		CE9BE7A32BFA8251001BB09F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7A22BFA8251001BB09F /* Coordinator.swift */; };
+		CE9BE7A52BFA834C001BB09F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7A42BFA834C001BB09F /* MainCoordinator.swift */; };
+		CE9BE7A72BFA856D001BB09F /* CharacterDetailPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7A62BFA856D001BB09F /* CharacterDetailPushCoordinator.swift */; };
+		CE9BE7A92BFA8819001BB09F /* CharacterDetailModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7A82BFA8819001BB09F /* CharacterDetailModalCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		CE9BE7962BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDelegate.swift; sourceTree = "<group>"; };
 		CE9BE79D2BF9994D001BB09F /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		CE9BE79F2BF999E9001BB09F /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		CE9BE7A22BFA8251001BB09F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE9BE7A42BFA834C001BB09F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CE9BE7A62BFA856D001BB09F /* CharacterDetailPushCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPushCoordinator.swift; sourceTree = "<group>"; };
+		CE9BE7A82BFA8819001BB09F /* CharacterDetailModalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailModalCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 		CE9BE76A2BF97D42001BB09F /* MVC-Example */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BE7A12BFA822D001BB09F /* Coordinators */,
 				CE9BE7992BF998B0001BB09F /* CharacterDetail */,
 				CE9BE7982BF99835001BB09F /* ListOfCharacters */,
 				CE9BE78F2BF984DF001BB09F /* App */,
@@ -180,6 +189,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CE9BE7A12BFA822D001BB09F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BE7A22BFA8251001BB09F /* Coordinator.swift */,
+				CE9BE7A42BFA834C001BB09F /* MainCoordinator.swift */,
+				CE9BE7A62BFA856D001BB09F /* CharacterDetailPushCoordinator.swift */,
+				CE9BE7A82BFA8819001BB09F /* CharacterDetailModalCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,15 +280,19 @@
 				CE9BE7882BF97EA3001BB09F /* CharacterModelResponse.swift in Sources */,
 				CE9BE7702BF97D42001BB09F /* CharactersViewController.swift in Sources */,
 				CE9BE7762BF97D42001BB09F /* MVC_Example.xcdatamodeld in Sources */,
+				CE9BE7A72BFA856D001BB09F /* CharacterDetailPushCoordinator.swift in Sources */,
 				CE9BE79E2BF9994D001BB09F /* CharacterDetailView.swift in Sources */,
 				CE9BE76C2BF97D42001BB09F /* AppDelegate.swift in Sources */,
 				CE9BE7862BF97DD0001BB09F /* APIClient.swift in Sources */,
+				CE9BE7A32BFA8251001BB09F /* Coordinator.swift in Sources */,
 				CE9BE78A2BF97ECC001BB09F /* CharacterModel.swift in Sources */,
 				CE9BE78C2BF97FDC001BB09F /* CharacterListView.swift in Sources */,
 				CE9BE7A02BF999E9001BB09F /* CharacterDetailViewController.swift in Sources */,
 				CE9BE7922BF98A24001BB09F /* ListOfCharactersTableViewDataSource.swift in Sources */,
 				CE9BE7972BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift in Sources */,
 				CE9BE78E2BF981D2001BB09F /* CharacterListCellView.swift in Sources */,
+				CE9BE7A92BFA8819001BB09F /* CharacterDetailModalCoordinator.swift in Sources */,
+				CE9BE7A52BFA834C001BB09F /* MainCoordinator.swift in Sources */,
 				CE9BE76E2BF97D42001BB09F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

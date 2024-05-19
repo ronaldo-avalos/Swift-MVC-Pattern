@@ -13,6 +13,9 @@ class CharactersViewController: UIViewController {
     private var tableViewDataSource: ListOfCharactersTableViewDataSource?
     private var tableViewDelegate: ListOfCharactersTableViewDelegate?
     
+    var characterDetailPushCoordinator : CharacterDetailPushCoordinator?
+//    var characterDetailPushCoordinator : CharacterDetailModalCoordinator?
+    
     override func loadView() {
         view = CharactersListView()
         
@@ -33,9 +36,9 @@ class CharactersViewController: UIViewController {
                 return
             }
             let characterModel = dataSource.characters[index]
-            let characterDetailViewController = CharacterDetailViewController(character: characterModel)
-            self?.present(characterDetailViewController, animated: true)
-            
+            self?.characterDetailPushCoordinator = CharacterDetailPushCoordinator(navigationController:   self?.navigationController, characterModel: characterModel)
+//            self?.characterDetailPushCoordinator = CharacterDetailModalCoordinator(viewController: self, characterModel: characterModel)
+            self?.characterDetailPushCoordinator?.start()
         }
         
         //Cuando la vista haya cargado hacemos la peticion a https
