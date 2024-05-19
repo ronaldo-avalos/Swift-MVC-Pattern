@@ -22,6 +22,8 @@
 		CE9BE7922BF98A24001BB09F /* ListOfCharactersTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7912BF98A24001BB09F /* ListOfCharactersTableViewDataSource.swift */; };
 		CE9BE7952BF994EF001BB09F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE9BE7942BF994EF001BB09F /* Kingfisher */; };
 		CE9BE7972BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7962BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift */; };
+		CE9BE79E2BF9994D001BB09F /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE79D2BF9994D001BB09F /* CharacterDetailView.swift */; };
+		CE9BE7A02BF999E9001BB09F /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE79F2BF999E9001BB09F /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		CE9BE78D2BF981D2001BB09F /* CharacterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellView.swift; sourceTree = "<group>"; };
 		CE9BE7912BF98A24001BB09F /* ListOfCharactersTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDataSource.swift; sourceTree = "<group>"; };
 		CE9BE7962BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDelegate.swift; sourceTree = "<group>"; };
+		CE9BE79D2BF9994D001BB09F /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		CE9BE79F2BF999E9001BB09F /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +78,9 @@
 		CE9BE76A2BF97D42001BB09F /* MVC-Example */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BE7992BF998B0001BB09F /* CharacterDetail */,
+				CE9BE7982BF99835001BB09F /* ListOfCharacters */,
 				CE9BE78F2BF984DF001BB09F /* App */,
-				CE9BE7822BF97D72001BB09F /* Model */,
-				CE9BE7832BF97D79001BB09F /* View */,
-				CE9BE7842BF97D83001BB09F /* Controller */,
 				CE9BE7902BF9891B001BB09F /* Resources */,
 				CE9BE77C2BF97D44001BB09F /* Info.plist */,
 				CE9BE7742BF97D42001BB09F /* MVC_Example.xcdatamodeld */,
@@ -100,8 +103,6 @@
 			children = (
 				CE9BE78B2BF97FDC001BB09F /* CharacterListView.swift */,
 				CE9BE78D2BF981D2001BB09F /* CharacterListCellView.swift */,
-				CE9BE7712BF97D42001BB09F /* Main.storyboard */,
-				CE9BE7792BF97D44001BB09F /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 		CE9BE78F2BF984DF001BB09F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BE7712BF97D42001BB09F /* Main.storyboard */,
 				CE9BE76B2BF97D42001BB09F /* AppDelegate.swift */,
 				CE9BE76D2BF97D42001BB09F /* SceneDelegate.swift */,
 			);
@@ -128,9 +130,54 @@
 		CE9BE7902BF9891B001BB09F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BE7792BF97D44001BB09F /* LaunchScreen.storyboard */,
 				CE9BE7772BF97D44001BB09F /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE9BE7982BF99835001BB09F /* ListOfCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BE7822BF97D72001BB09F /* Model */,
+				CE9BE7832BF97D79001BB09F /* View */,
+				CE9BE7842BF97D83001BB09F /* Controller */,
+			);
+			name = ListOfCharacters;
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE9BE7992BF998B0001BB09F /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BE79A2BF998C8001BB09F /* Model */,
+				CE9BE79B2BF998D2001BB09F /* View */,
+				CE9BE79C2BF998D8001BB09F /* Controller */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		CE9BE79A2BF998C8001BB09F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CE9BE79B2BF998D2001BB09F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BE79D2BF9994D001BB09F /* CharacterDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE9BE79C2BF998D8001BB09F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BE79F2BF999E9001BB09F /* CharacterDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +260,12 @@
 				CE9BE7882BF97EA3001BB09F /* CharacterModelResponse.swift in Sources */,
 				CE9BE7702BF97D42001BB09F /* CharactersViewController.swift in Sources */,
 				CE9BE7762BF97D42001BB09F /* MVC_Example.xcdatamodeld in Sources */,
+				CE9BE79E2BF9994D001BB09F /* CharacterDetailView.swift in Sources */,
 				CE9BE76C2BF97D42001BB09F /* AppDelegate.swift in Sources */,
 				CE9BE7862BF97DD0001BB09F /* APIClient.swift in Sources */,
 				CE9BE78A2BF97ECC001BB09F /* CharacterModel.swift in Sources */,
 				CE9BE78C2BF97FDC001BB09F /* CharacterListView.swift in Sources */,
+				CE9BE7A02BF999E9001BB09F /* CharacterDetailViewController.swift in Sources */,
 				CE9BE7922BF98A24001BB09F /* ListOfCharactersTableViewDataSource.swift in Sources */,
 				CE9BE7972BF995AF001BB09F /* ListOfCharactersTableViewDelegate.swift in Sources */,
 				CE9BE78E2BF981D2001BB09F /* CharacterListCellView.swift in Sources */,

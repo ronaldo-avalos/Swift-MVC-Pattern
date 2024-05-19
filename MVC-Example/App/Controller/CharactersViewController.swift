@@ -24,6 +24,20 @@ class CharactersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewDelegate?.didTapOnCell = { [weak self] index in
+            print("index \(index)")
+            
+            // present new view controller
+            guard let dataSource = self?.tableViewDataSource else {
+                return
+            }
+            let characterModel = dataSource.characters[index]
+            let characterDetailViewController = CharacterDetailViewController(character: characterModel)
+            self?.present(characterDetailViewController, animated: true)
+            
+        }
+        
         //Cuando la vista haya cargado hacemos la peticion a https
         Task {
             let characters = await apiClient.getListOfCharacters()
@@ -31,8 +45,5 @@ class CharactersViewController: UIViewController {
             tableViewDataSource?.set(characters: characters.results)
         }
     }
-
-
-
 }
 
