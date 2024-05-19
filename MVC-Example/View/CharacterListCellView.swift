@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class CharacterListCellView : UITableViewCell {
     let characterImageView: UIImageView = {
@@ -42,7 +43,7 @@ class CharacterListCellView : UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        setupView()
     }
     
     func setupView() {
@@ -64,5 +65,12 @@ class CharacterListCellView : UITableViewCell {
             characterSpecie.leadingAnchor.constraint(equalTo: characterName.leadingAnchor),
             characterSpecie.topAnchor.constraint(equalTo: characterStatus.bottomAnchor, constant: 8),
         ])
+    }
+    
+    func configure(_ model : CharacterModel) {
+        self.characterName.text = model.name
+        self.characterSpecie.text = model.species
+        self.characterStatus.text = model.status
+        self.characterImageView.kf.setImage(with: URL(string: model.image))
     }
 }
